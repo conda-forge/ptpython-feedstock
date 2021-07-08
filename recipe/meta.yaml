@@ -1,5 +1,5 @@
 {% set name = "ptpython" %}
-{% set version = "3.0.18" %}
+{% set version = "3.0.19" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ptpython-{{ version }}.tar.gz
-  sha256: 1a641021f550d03580576ddf49eb15a94693b39de9a8334786d85e180834da9d
+  sha256: b3d41ce7c2ce0e7e55051347eae400fc56b9b42b1c4a9db25b19ccf6195bfc12
 
 build:
   number: 0
