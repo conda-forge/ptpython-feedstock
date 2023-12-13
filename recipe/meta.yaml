@@ -1,5 +1,5 @@
 {% set name = "ptpython" %}
-{% set version = "3.0.20" %}
+{% set version = "3.0.24" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ptpython-{{ version }}.tar.gz
-  sha256: eafd4ced27ca5dc370881d4358d1ab5041b32d88d31af8e3c24167fe4af64ed6
+  sha256: 6bc48211c0f6b5fc1ccfe617485167070311d7c79014eb9c06984e90802b54b0
 
 build:
-  number: 2
+  number: 0
   skip: true  # [py2k]
   entry_points:
     - ptpython = ptpython.entry_points.run_ptpython:run
