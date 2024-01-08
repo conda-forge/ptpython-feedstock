@@ -10,7 +10,7 @@ source:
   sha256: 887f0a91a576bc26585a0dcec41cd03f004ac7c46a2c88576c87fc51d6c06cd7
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py2k]
   entry_points:
     - ptpython = ptpython.entry_points.run_ptpython:run
