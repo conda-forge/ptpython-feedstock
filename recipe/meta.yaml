@@ -10,30 +10,26 @@ source:
   sha256: b9d625183aef93a673fc32cbe1c1fcaf51412e7a4f19590521cdaccadf25186e
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - ptpython = ptpython.entry_points.run_ptpython:run
     - ptipython = ptpython.entry_points.run_ptipython:run
     - ptpython3 = ptpython.entry_points.run_ptpython:run
-    - ptpython3.8 = ptpython.entry_points.run_ptpython:run  # [py==38]
-    - ptpython3.9 = ptpython.entry_points.run_ptpython:run  # [py==39]
     - ptipython3 = ptpython.entry_points.run_ptipython:run
-    - ptipython3.8 = ptpython.entry_points.run_ptipython:run  # [py==38]
-    - ptipython3.9 = ptpython.entry_points.run_ptipython:run  # [py==39]
-  script: {{ PYTHON }} -m pip install . -vv
+  script:
+    - {{ PYTHON }} -m pip install . -vv
+  noarch: python
 
 requirements:
-  build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
     - pip
     - python
+    - setuptools
   run:
     - appdirs
     - black
     - jedi >=0.16.0
-    - prompt_toolkit >=3.0.18,<3.1.0
+    - prompt_toolkit >=3.0.43,<3.1.0
     - pygments
     - python
 
@@ -46,13 +42,10 @@ test:
     - ptpython --help
     - ptipython --help
     - ptpython3 --help
-    - ptpython3.8 --help  # [py==38]
-    - ptpython3.9 --help  # [py==39]
     - ptipython3 --help
-    - ptipython3.8 --help  # [py==38]
-    - ptipython3.9 --help  # [py==39]
   requires:
     - pip
+    - python
 
 about:
   home: https://github.com/prompt-toolkit/ptpython
