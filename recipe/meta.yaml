@@ -6,24 +6,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ptpython-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ptpython-{{ version }}.tar.gz
   sha256: b9d625183aef93a673fc32cbe1c1fcaf51412e7a4f19590521cdaccadf25186e
 
 build:
   noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
   number: 1
   entry_points:
     - ptpython = ptpython.entry_points.run_ptpython:run
     - ptipython = ptpython.entry_points.run_ptipython:run
     - ptpython3 = ptpython.entry_points.run_ptpython:run
     - ptipython3 = ptpython.entry_points.run_ptipython:run
-  script:
-    - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python {{ python_min }}.*
+    - python {{ python_min }}
     - setuptools
   run:
     - appdirs
@@ -45,7 +44,7 @@ test:
     - ptipython3 --help
   requires:
     - pip
-    - python {{ python_min }}.*
+    - python {{ python_min }}
 
 about:
   home: https://github.com/prompt-toolkit/ptpython
