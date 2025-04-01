@@ -10,6 +10,7 @@ source:
   sha256: b9d625183aef93a673fc32cbe1c1fcaf51412e7a4f19590521cdaccadf25186e
 
 build:
+  noarch: python
   number: 1
   entry_points:
     - ptpython = ptpython.entry_points.run_ptpython:run
@@ -18,7 +19,6 @@ build:
     - ptipython3 = ptpython.entry_points.run_ptipython:run
   script:
     - {{ PYTHON }} -m pip install . -vv
-  noarch: python
 
 requirements:
   host:
