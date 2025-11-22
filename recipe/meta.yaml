@@ -1,5 +1,5 @@
 {% set name = "ptpython" %}
-{% set version = "3.0.31" %}
+{% set version = "3.0.32" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ptpython-{{ version }}.tar.gz
-  sha256: 4fed0be42bad01b7c299922cf262f51d8a77c9c8ab8e261c902e981a57439c13
+  sha256: 11651778236de95c582b42737294e50a66ba4a21fa01c0090ea70815af478fe0
 
 build:
   noarch: python
