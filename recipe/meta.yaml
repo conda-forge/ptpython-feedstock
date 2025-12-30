@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   entry_points:
     - ptpython = ptpython.entry_points.run_ptpython:run
     - ptipython = ptpython.entry_points.run_ptipython:run
@@ -26,7 +26,6 @@ requirements:
     - setuptools
   run:
     - appdirs
-    - black
     - jedi >=0.16.0
     - prompt_toolkit >=3.0.43,<3.1.0
     - pygments
